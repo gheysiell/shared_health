@@ -18,7 +18,7 @@ const styles = StyleSheet.create({
         color: "#ff0043",
         fontWeight: "bold",
     },
-    boxSharebutton: {
+    boxSharedButton: {
         width: "100%",
         alignItems: "center",
         marginBottom: 10,

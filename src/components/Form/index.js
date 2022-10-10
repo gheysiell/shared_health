@@ -6,7 +6,6 @@ import {
     TouchableOpacity,
     Vibration,
     Pressable,
-    Keyboard,
     FlatList,
 } from 'react-native'
 import ResultImc from './ResultImc'
@@ -54,7 +53,7 @@ const Form = () => {
     return (
         <View style={styles.formContext}>
             {imc == null ?
-                <Pressable onPress={Keyboard.dismiss()} style={styles.form}>
+                <Pressable style={styles.form}>
                     <Text
                         style={styles.formLabel}
                     >Altura</Text>
@@ -94,34 +93,36 @@ const Form = () => {
                 </Pressable>
                 :
                 <View style={styles.exhibitionResultImc}>
-                    <ResultImc messageResultImc={messageImc} ResultImc={imc} />
-                    <TouchableOpacity
-                        style={styles.buttonCalculator}
-                        onPress={() => { validationImc() }}
-                    >
-                        <Text style={styles.textButtonCalculator}>
-                            {textButton}
-                        </Text>
-                    </TouchableOpacity>
+                    <ResultImc messageResultImc={messageImc} resultImc={imc} />
+                    <View style={styles.wrapperBtnCalcNovamente}>
+                        <TouchableOpacity
+                            style={styles.buttonCalculator}
+                            onPress={() => { validationImc() }}
+                        >
+                            <Text style={styles.textButtonCalculator}>
+                                {textButton}
+                            </Text>
+                        </TouchableOpacity>
+                    </View>
                 </View>
             }
             <FlatList
                 showsVerticalScrollIndicator={false}
                 style={styles.listImcs}
-                data={imcList.reverse()}
+                data={imcList}
                 renderItem={({ item }) => {
                     return (
                         <Text style={styles.resultImcItem}>
                             <Text style={styles.textResultItemList}>
                                 Resultado IMC =
                             </Text>
-                            {item.imc}
+                            <Text style={styles.resultImcresultImcItem}>
+                                {" "+item.imc}
+                            </Text>
                         </Text>
                     )
                 }}
-                keyExtractor={item => {
-                    item.id
-                }}
+                keyExtractor={item => item.id}
             />
         </View>
     )

@@ -12,11 +12,14 @@ const style = StyleSheet.create({
     form: {
         width: '100%',
         paddingTop: 20,
+        justifyContent: 'center',
+        alignItems: 'center'
     },
     formLabel: {
         color: '#000',
         fontSize: 18,
-        paddingLeft: 20,        
+        paddingLeft: 20,
+        width: '95%'
     },
     input: {        
         width: '90%',
@@ -34,8 +37,7 @@ const style = StyleSheet.create({
         backgroundColor: "#ff0043",
         paddingTop: 14,
         paddingBottom: 14,
-        marginLeft: 12,
-        marginTop: 30,
+        marginTop: 40,
     },
     textButtonCalculator: {
         fontSize: 20,
@@ -45,25 +47,30 @@ const style = StyleSheet.create({
         fontSize: 12,
         color: 'red',
         fontWeight: 'bold',
-        paddingLeft: 20,
+        width: '85%',
     },
     exhibitionResultImc: {
         width: '100%',
-        height: '50%',
+        height: '50%',        
+    },
+    wrapperBtnCalcNovamente: {
+        width: '100%',
+        height: 100,
+        alignItems: 'center',
+        justifyContent: 'center',
     },
     listImcs: {
         marginTop: 20,
     },
     resultImcresultImcItem: {
-        fontSize: 26,        
+        fontSize: 24,        
         color: 'red',
         height: 50,
         width: '100%',
-        paddingRight: 20,
     },
     textResultItemList: {
-        fontSize: 16,
-        color: "red"
+        fontSize: 17,
+        color: "red",
     },
 })
 

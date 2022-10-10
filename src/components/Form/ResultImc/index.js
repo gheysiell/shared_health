@@ -12,12 +12,12 @@ const ResultImc = (props) => {
         <View style={styles.contextImc}>
             <View style={styles.boxSharedButton}>                
                 <Text style={styles.titleResultImc}>
+                    {props.messageResultImc}
+                </Text>
+                <Text style={styles.resultImc}>
                     {props.resultImc}
                 </Text>
-                <Text style={styles.number}>
-                    {props.ResultImc}
-                </Text>
-                <TouchableOpacity style={styles.shared}>
+                <TouchableOpacity style={styles.shared} onPress={onShare}>
                     <Text style={styles.sharedText}>
                         Share
                     </Text>
